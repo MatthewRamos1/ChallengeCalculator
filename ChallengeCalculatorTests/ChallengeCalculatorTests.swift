@@ -37,6 +37,15 @@ class ChallengeCalculatorTests: XCTestCase {
         XCTAssertEqual(expectedResult, result, "\(result) should be \(expectedResult)" )
     
     }
+    
+    func testCalculateWeeklyTraining() {
+        let sut = Challenge()
+        let sutWeeklyTraining = 2320 //feet evlevation per week
+        let metric = 11_602 //overall elevation challenge
+        let numberOfWeeksForChallenge = 5
+        
+        let weeklyTraining = sut
+    }
 
     func testExample() {
         // This is an example of a functional test case.
