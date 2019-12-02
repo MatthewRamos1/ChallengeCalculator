@@ -40,11 +40,19 @@ class ChallengeCalculatorTests: XCTestCase {
     
     func testCalculateWeeklyTraining() {
         let sut = Challenge()
-        let sutWeeklyTraining = 2320 //feet evlevation per week
+        let sutExpectedAverage = 2320 //feet evlevation per week
         let metric = 11_602 //overall elevation challenge
         let numberOfWeeksForChallenge = 5
         
-        let weeklyTraining = sut
+        let weeklyTraining = sut.calculateWeeklyTraining(for: Double(metric), and: numberOfWeeksForChallenge)
+        
+        XCTAssertEqual(sutExpectedAverage, weeklyTraining, "Should be equal")
+        
+        //make sure division by 0 returns
+    }
+    
+    func testZeroToOne() {
+        let sut = Challenge()
     }
 
     func testExample() {

@@ -14,6 +14,7 @@ struct Challenge {
     }
     
     func calculateWeeklyTraining(for metric: Double, and weeks: Int) -> Int {
+        guard weeks != 0 else { return -1 }
         return Int(metric) / weeks // average metric (elevation, distance) per week
     }
     
