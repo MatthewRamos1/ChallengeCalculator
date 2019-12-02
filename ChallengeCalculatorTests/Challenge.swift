@@ -18,4 +18,10 @@ struct Challenge {
         return Int(metric) / weeks // average metric (elevation, distance) per week
     }
     
+    // production code ships with the application 
+    func averageTrainingPerWeek(challengeMetric: Int, numberOfWorkoutDays: Int) -> Int {
+        guard (1...7).contains(numberOfWorkoutDays) else { return -1 }
+        return challengeMetric / numberOfWorkoutDays
+    }
+    
 }

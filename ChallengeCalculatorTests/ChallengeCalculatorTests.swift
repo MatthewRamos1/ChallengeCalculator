@@ -49,10 +49,22 @@ class ChallengeCalculatorTests: XCTestCase {
         XCTAssertEqual(sutExpectedAverage, weeklyTraining, "Should be equal")
         
         //make sure division by 0 returns
+        /*
+         Test Driven Development - TDD
+         You start off writing a unit test until it fails(or a compiler error), then go to production code and fix the failure until test passes, continue cycle
+         */
     }
     
-    func testZeroToOne() {
+    func testAverageDailyMetric() {
         let sut = Challenge()
+        let sutWeeklyTotalMetric = 2320 // total elevation
+        let expectedDailyAverage = 773
+        let numberOfWorkoutDays = 3
+        
+        let averageDailyTraining = sut.averageTrainingPerWeek(challengeMetric: sutWeeklyTotalMetric, numberOfWorkoutDays: numberOfWorkoutDays)
+        
+        XCTAssertEqual(averageDailyTraining, expectedDailyAverage, "Should be equal")
+        
     }
 
     func testExample() {
